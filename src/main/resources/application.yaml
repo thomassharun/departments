@@ -1,0 +1,23 @@
+server:
+    port: 8081
+spring:
+    application:
+      name: departments
+    profiles:
+      active: dev
+    datasource:
+        password: root
+        url: jdbc:mysql://localhost:3306/deptdatabase?useSSL=false
+        username: root
+    jpa:
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQLDialect
+        show-sql: true
+        
+    config:
+      import: "configserver:http://localhost:8090/"
+      
+      
