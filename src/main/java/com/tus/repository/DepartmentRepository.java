@@ -5,10 +5,11 @@ import org.springframework.stereotype.Repository;
 
 import com.tus.model.Department;
 import java.util.List;
+import java.util.Optional;
 
 
 @Repository
 public interface DepartmentRepository extends JpaRepository<Department, Long>{
 
-	List<Department> findByName(String name);
+	Optional<List<Department>> findByName(String name);
 }
